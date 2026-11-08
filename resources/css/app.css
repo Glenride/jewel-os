@@ -190,3 +190,120 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* ---- jewel immersive layer: depth, motion, glow ---- */
+@keyframes jewel-kenburns {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.12);
+    }
+}
+.jewel-kenburns {
+    animation: jewel-kenburns 26s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes jewel-float {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -18px, 0);
+    }
+}
+.jewel-float {
+    animation: jewel-float 9s ease-in-out infinite;
+}
+
+@keyframes jewel-bubble-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.jewel-bubble {
+    opacity: 0;
+    animation: jewel-bubble-in 0.7s cubic-bezier(0.22, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes jewel-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+.jewel-gold-text {
+    background: linear-gradient(100deg, #f0b64c 20%, #ffe1a1 40%, #f0b64c 60%, #d99a26 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: jewel-shimmer 6s linear infinite;
+}
+
+@keyframes jewel-twinkle {
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+.jewel-star {
+    animation: jewel-twinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes jewel-glow-pulse {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.jewel-glow-pulse {
+    animation: jewel-glow-pulse 4s ease-in-out infinite;
+}
+
+/* Scroll reveal: fades + rises a section in the first time it enters view. */
+.jewel-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 0.9, 0.3, 1),
+        transform 0.9s cubic-bezier(0.22, 0.9, 0.3, 1);
+}
+.jewel-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .jewel-kenburns,
+    .jewel-float,
+    .jewel-bubble,
+    .jewel-gold-text,
+    .jewel-star,
+    .jewel-glow-pulse {
+        animation: none !important;
+    }
+    .jewel-bubble {
+        opacity: 1;
+    }
+    .jewel-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
