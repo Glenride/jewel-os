@@ -224,8 +224,6 @@ export default function Welcome() {
     return (
         <>
             <Head title="jewel OS — for the company of one">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
                 <style>{`@keyframes jewel-fade-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } .jewel-fade-up { animation: jewel-fade-up .8s ease-out both; }`}</style>
             </Head>
 
