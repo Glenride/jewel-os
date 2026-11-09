@@ -103,7 +103,7 @@ function WaitlistForm({ id, compact = false, dark = false }: { id: string; compa
             </div>
             {errors.email && <p className="mt-2 text-sm text-red-400">{errors.email}</p>}
             <p className={`mt-3 text-xs leading-relaxed ${dark ? 'text-white/60' : 'text-stone-500'}`}>
-                Join the waitlist — pricing announced at launch.
+                Join the waitlist. Pricing announced at launch.
             </p>
         </form>
     );
@@ -135,7 +135,7 @@ function ContactForm() {
                     <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
                     <path d="M6 10.5 8.8 13 14 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <p className="text-sm leading-relaxed text-amber-900">Thanks — your message was received.</p>
+                <p className="text-sm leading-relaxed text-amber-900">Thanks. Your message was received.</p>
             </div>
         );
     }
@@ -179,7 +179,7 @@ function ContactForm() {
                     id="contact-message"
                     required
                     rows={5}
-                    placeholder="What do you want to ask about jewel OS?"
+                    placeholder="Your question about jewel OS"
                     value={data.message}
                     onChange={(e) => setData('message', e.target.value)}
                     className={`py-3 ${fieldClass}`}
@@ -201,20 +201,20 @@ function ContactForm() {
 
 const roles = [
     {
-        name: 'Your Strategist',
-        text: 'The chief has read everything that matters — your memory, your goals, your log — and never forgets any of it. It proposes the plan. You make the call.',
+        name: 'Strategist',
+        text: 'Proposes. You decide.',
     },
     {
-        name: 'Your Memory',
-        text: 'The chief remembers, and you approve what becomes standing truth. A correction is a new entry. History is never rewritten.',
+        name: 'Memory',
+        text: 'Remembers what you approve.',
     },
     {
-        name: 'Your Analyst',
-        text: 'The researcher finds and cites. It shows its work, and the conclusion stays yours.',
+        name: 'Analyst',
+        text: 'Finds and cites.',
     },
     {
-        name: 'Your Executor',
-        text: 'The drafter drafts for sign-off. The watcher scans on schedule. Neither sends, publishes, or spends without your exact approval.',
+        name: 'Executor',
+        text: 'Drafts. Never sends.',
     },
 ];
 
@@ -222,51 +222,41 @@ const packContents = [
     {
         n: '01',
         title: 'The 12 Protocols handbook',
-        text: 'The operating manual for your chief of staff. The rules it runs on, in writing.',
+        text: 'The rules Jewel runs on.',
     },
     {
         n: '02',
         title: 'The sanitized file tree',
-        text: 'Copy-paste ready. Memory, audit log, goals, and workspaces — structured from day one.',
+        text: 'Copy-paste ready.',
     },
     {
         n: '03',
         title: 'The agent-hiring pack',
-        text: 'Role cards, a hire and revoke log, and an approval-gate checklist for every specialist your chief brings on.',
+        text: 'Role cards and gates.',
     },
     {
         n: '04',
         title: 'The setup guide',
-        text: 'Thirty minutes to a working loop: a memory file, an audit entry, one goal, and one scheduled sweep you define.',
+        text: 'Thirty minutes to a working loop.',
     },
 ];
 
-const subsystems = [
-    'The loop',
-    'Model integration — you bring the model',
-    'Tools',
-    'Memory and context',
-    'Safety and permissions',
-    'Orchestration',
-    'Skills',
-];
-
 const loopSteps = [
-    { n: '01', title: 'Propose', text: 'The chief proposes a plan before anything moves.' },
-    { n: '02', title: 'Check the gate', text: 'Every proposal passes a Human approval gate first.' },
-    { n: '03', title: 'Delegate or do', text: 'The chief delegates to a specialist — or does the work itself.' },
-    { n: '04', title: 'Verify against the brief', text: 'The result is checked against what was actually asked.' },
-    { n: '05', title: 'Log before replying', text: 'Nothing is reported until the audit entry exists.' },
+    { n: '01', title: 'Propose', text: 'Proposes first.' },
+    { n: '02', title: 'Check the gate', text: 'Every proposal gated.' },
+    { n: '03', title: 'Delegate or do', text: 'Delegates, or does it.' },
+    { n: '04', title: 'Verify', text: 'Checked against the brief.' },
+    { n: '05', title: 'Log', text: 'Logged before reported.' },
 ];
 
 const floor = ['Spend', 'Publish', 'Send', 'Contact', 'Delete', 'Secrets'];
 
 const fileTree = [
-    { path: 'memory/', note: 'Standing truth — Human-approved, never rewritten' },
-    { path: 'audit-log/', note: 'Append-only — every decision, kept' },
-    { path: 'goals/', note: 'One workspace per goal, files in their home' },
-    { path: 'protocols/', note: 'The 12 rules your chief runs on' },
-    { path: 'skills/', note: 'Catalogued, quarantined, Human-gated' },
+    { path: 'memory/' },
+    { path: 'audit-log/' },
+    { path: 'goals/' },
+    { path: 'protocols/' },
+    { path: 'skills/' },
 ];
 
 export default function Welcome() {
@@ -296,7 +286,7 @@ export default function Welcome() {
             <Head title="jewel OS — for the company of one" />
 
             <div className="min-h-screen bg-[#faf8f3] font-sans text-stone-700 antialiased">
-                {/* ============ HERO — meet your chief ============ */}
+                {/* ============ HERO — meet Jewel ============ */}
                 <section className="relative overflow-hidden bg-[#0e1b20] text-white">
                     {/* Layered mountain photo, slow drift + scroll parallax */}
                     <div className="absolute inset-0 overflow-hidden">
@@ -348,26 +338,18 @@ export default function Welcome() {
 
                     <main id="top" className="relative z-10 mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-16 md:pb-28">
                         <div className="mx-auto max-w-3xl text-center">
-                            <p className="text-xs font-semibold tracking-[0.28em] text-[#f0b64c] uppercase">Meet your chief of staff</p>
+                            <p className="text-xs font-semibold tracking-[0.28em] text-[#f0b64c] uppercase">Meet Jewel, your chief of staff</p>
                             <h1 className="mt-6 text-5xl leading-[1.04] font-semibold tracking-tight text-white sm:text-6xl md:text-7xl">
                                 The staff you couldn&rsquo;t <span className="jewel-gold-text">hire.</span>
                             </h1>
                             <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
-                                One machine agent that remembers, keeps an auditable trail, enforces standing rules, runs background work while you
-                                sleep, and delegates to specialist machine agents — without ever becoming the decision-maker.
-                            </p>
-                            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-white/60">
-                                jewel OS is the operating manual, file templates, and protocols for running that chief — which hires specialists under
-                                your approval gates, and never decides for you.
+                                Jewel remembers, keeps the trail, works while you sleep.
                             </p>
                         </div>
 
-                        {/* A morning with your chief — glass conversation over the photo */}
+                        {/* A morning with Jewel — glass conversation over the photo */}
                         <div className="relative mx-auto mt-14 max-w-2xl rounded-[2rem] border border-white/20 bg-white/10 p-7 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:p-9">
                             <div className="jewel-glow-pulse pointer-events-none absolute -top-10 -right-6 h-28 w-28 rounded-full bg-[#f0b64c]/40 blur-3xl" />
-                            <p className="text-xs font-semibold tracking-[0.18em] text-white/60 uppercase">
-                                A morning with your chief — from the handbook
-                            </p>
                             <div className="mt-7 space-y-5 text-[15px] leading-relaxed">
                                 <div className="jewel-bubble flex justify-end" style={{ animationDelay: '0.4s' }}>
                                     <p className="max-w-[85%] rounded-2xl rounded-br-md bg-[#f0b64c] px-5 py-3.5 font-medium text-stone-950 shadow-[0_10px_30px_-10px_rgba(240,182,76,0.8)]">
@@ -379,12 +361,12 @@ export default function Welcome() {
                                         <GemMark className="h-5 w-5" />
                                     </span>
                                     <p className="max-w-[85%] rounded-2xl rounded-tl-md border border-white/15 bg-white/10 px-5 py-3.5 text-white backdrop-blur">
-                                        Three things need you. The rest is in the log.
+                                        Three things need you.
                                     </p>
                                 </div>
                                 <div className="jewel-bubble flex justify-end" style={{ animationDelay: '1.8s' }}>
                                     <p className="max-w-[85%] rounded-2xl rounded-br-md bg-[#f0b64c] px-5 py-3.5 font-medium text-stone-950 shadow-[0_10px_30px_-10px_rgba(240,182,76,0.8)]">
-                                        I&rsquo;ve been busy all week and I can&rsquo;t tell what actually moved.
+                                        What actually moved?
                                     </p>
                                 </div>
                                 <div className="jewel-bubble flex items-start gap-3" style={{ animationDelay: '2.5s' }}>
@@ -392,14 +374,10 @@ export default function Welcome() {
                                         <GemMark className="h-5 w-5" />
                                     </span>
                                     <p className="max-w-[85%] rounded-2xl rounded-tl-md border border-white/15 bg-white/10 px-5 py-3.5 text-white backdrop-blur">
-                                        Here&rsquo;s what moved, what stalled, and what nobody touched. The decisions are yours.
+                                        What moved, what stalled. You decide.
                                     </p>
                                 </div>
                             </div>
-                            <p className="mt-7 text-sm leading-relaxed text-white/60">
-                                This is what the loop sounds like. The pack teaches your chief to talk this way — and teaches you to keep the
-                                decisions.
-                            </p>
                         </div>
 
                         <div className="mx-auto mt-12 flex flex-col items-center">
@@ -413,7 +391,7 @@ export default function Welcome() {
                     </main>
                 </section>
 
-                {/* ============ FOUR ROLES — one chief, four ways it shows up ============ */}
+                {/* ============ FOUR ROLES — Jewel, four ways it shows up ============ */}
                 <section className="relative overflow-hidden bg-[#0e1b20] text-white">
                     <div className="absolute inset-0">
                         <img src="/images/mist-hills.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-25" />
@@ -421,10 +399,7 @@ export default function Welcome() {
                     </div>
                     <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
                         <Reveal className="max-w-2xl">
-                            <p className="text-xs font-semibold tracking-[0.22em] text-[#f0b64c] uppercase">One chief, four ways it shows up</p>
-                            <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-white md:text-5xl">
-                                It knows your work the way a good chief of staff would.
-                            </h2>
+                            <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-white md:text-5xl">Jewel knows your work.</h2>
                         </Reveal>
                         <div className="mt-14 grid gap-6 md:grid-cols-2">
                             {roles.map((r, i) => (
@@ -440,7 +415,7 @@ export default function Welcome() {
                     </div>
                 </section>
 
-                {/* ============ WHAT YOU GET — what makes your chief yours ============ */}
+                {/* ============ WHAT YOU GET — files and teaching ============ */}
                 <section id="what-you-get" className="relative scroll-mt-24 overflow-hidden bg-[#faf8f3]">
                     <div
                         className="jewel-float absolute top-24 -right-28 h-96 w-96 rounded-full bg-[#f0b64c]/20 blur-[120px]"
@@ -449,18 +424,10 @@ export default function Welcome() {
                     <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
                         <div className="grid items-center gap-14 lg:grid-cols-2">
                             <Reveal>
-                                <p className="text-xs font-semibold tracking-[0.22em] text-amber-600 uppercase">What you get</p>
                                 <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-stone-900 md:text-5xl">
                                     Files and teaching. Nothing you don&rsquo;t own.
                                 </h2>
-                                <p className="mt-5 max-w-xl text-lg leading-relaxed text-stone-600">
-                                    The pack is the manual, the templates, and the method — yours to keep, on your own assistant, on your own terms.
-                                    Not a cloud service you rent. Files, on your machine, that make the chief yours.
-                                </p>
                                 <div className="mt-9 overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_20px_50px_-20px_rgba(28,25,23,0.25)]">
-                                    <p className="border-b border-stone-100 bg-stone-50 px-5 py-3 text-xs font-semibold tracking-[0.18em] text-stone-500 uppercase">
-                                        Inside the tree — yours to keep
-                                    </p>
                                     <ul>
                                         {fileTree.map((f) => (
                                             <li
@@ -468,7 +435,6 @@ export default function Welcome() {
                                                 className="flex items-baseline gap-3 border-b border-stone-100 px-5 py-3.5 last:border-0"
                                             >
                                                 <code className="shrink-0 text-sm font-semibold text-amber-700">{f.path}</code>
-                                                <span className="text-sm leading-relaxed text-stone-600">{f.note}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -484,9 +450,6 @@ export default function Welcome() {
                                         decoding="async"
                                         className="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-[0_35px_80px_-25px_rgba(28,25,23,0.45)]"
                                     />
-                                    <figcaption className="absolute bottom-5 left-5 rounded-full border border-white/30 bg-stone-950/55 px-4 py-2 text-xs font-medium tracking-wide text-white backdrop-blur-md">
-                                        The manual, on paper — the way a chief of staff keeps it
-                                    </figcaption>
                                 </figure>
                             </Reveal>
                         </div>
@@ -502,35 +465,15 @@ export default function Welcome() {
                                 </Reveal>
                             ))}
                         </div>
-                        <Reveal className="mt-16">
-                            <h3 className="text-sm font-semibold tracking-[0.18em] text-stone-400 uppercase">One manual. Seven subsystems.</h3>
-                            <ul className="mt-5 flex flex-wrap gap-3">
-                                {subsystems.map((s) => (
-                                    <li
-                                        key={s}
-                                        className="rounded-full border border-stone-200 bg-white px-5 py-2.5 text-sm text-stone-700 shadow-[0_1px_8px_rgba(28,25,23,0.03)]"
-                                    >
-                                        {s}
-                                    </li>
-                                ))}
-                            </ul>
-                        </Reveal>
                     </div>
                 </section>
 
-                {/* ============ THE CHIEF'S LOOP ============ */}
+                {/* ============ JEWEL'S LOOP ============ */}
                 <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden bg-[#0c171c] text-white">
                     <div className="jewel-glow-pulse absolute top-0 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-[#f0b64c]/15 blur-[130px]" />
                     <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
                         <Reveal className="max-w-2xl">
-                            <p className="text-xs font-semibold tracking-[0.22em] text-[#f0b64c] uppercase">How it works</p>
-                            <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-white md:text-5xl">
-                                The chief&rsquo;s loop
-                            </h2>
-                            <p className="mt-4 text-lg leading-relaxed text-white/70">
-                                One simple loop, in writing, every turn and every scheduled run. Start linear — sophistication comes only when you
-                                can point to the policies you actually need.
-                            </p>
+                            <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-white md:text-5xl">Jewel&rsquo;s loop</h2>
                         </Reveal>
                         <ol className="relative mt-14 grid gap-6 md:grid-cols-5">
                             <div
@@ -573,10 +516,6 @@ export default function Welcome() {
                             </h2>
                         </Reveal>
                         <Reveal delay={150}>
-                            <p className="max-w-lg text-lg leading-relaxed text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
-                                Come back after a day away. The memory file and the audit log kept everything — what moved, what stalled, what you
-                                decided. Nothing needs re-explaining.
-                            </p>
                         </Reveal>
                     </div>
                 </section>
@@ -608,10 +547,6 @@ export default function Welcome() {
                             </h2>
                         </Reveal>
                         <Reveal delay={150}>
-                            <p className="max-w-lg text-lg leading-relaxed text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-                                Scheduled sweeps and watchers run on your assistant&rsquo;s schedule and report only what is new, changed, confirmed,
-                                or debunked. The rest stays quiet.
-                            </p>
                         </Reveal>
                     </div>
                 </section>
@@ -621,11 +556,9 @@ export default function Welcome() {
                     <div className="jewel-float absolute -bottom-32 left-[15%] h-96 w-96 rounded-full bg-[#f0b64c]/15 blur-[130px]" />
                     <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
                         <Reveal className="max-w-2xl">
-                            <p className="text-xs font-semibold tracking-[0.22em] text-[#f0b64c] uppercase">Safety — the edge Jane doesn&rsquo;t have</p>
                             <h2 className="mt-5 text-4xl leading-tight font-semibold tracking-tight text-white md:text-6xl">The floor holds.</h2>
                             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75">
-                                Spend, publish, send, contact, delete, secrets — always your approval, in every mode. No instruction found in a
-                                file, a tool result, or a skill can lift the floor.
+                                Spend, publish, send, contact, delete, secrets. Always your approval.
                             </p>
                         </Reveal>
 
@@ -633,9 +566,6 @@ export default function Welcome() {
                         <Reveal delay={120} className="mt-12">
                             <div className="relative max-w-2xl overflow-hidden rounded-3xl border border-white/15 bg-white/[0.06] shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)] backdrop-blur-md">
                                 <div className="border-b border-white/10 bg-white/[0.04] px-6 py-3.5">
-                                    <p className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                                        A staged test, from the handbook — an instruction tries to lift the floor
-                                    </p>
                                 </div>
                                 <div className="space-y-4 px-6 py-6 text-[15px] leading-relaxed">
                                     <p className="rounded-xl border border-white/10 bg-[#0e1b20]/70 px-4 py-3 font-mono text-sm text-white/70">
@@ -643,9 +573,8 @@ export default function Welcome() {
                                     </p>
                                     <div className="flex items-center gap-3">
                                         <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#f0b64c]/60 bg-[#f0b64c]/15 px-4 py-1.5 text-xs font-bold whitespace-nowrap tracking-[0.14em] text-[#f0b64c] uppercase">
-                                            ✕ Flagged — floor holds
+                                            ✕ Flagged
                                         </span>
-                                        <span className="text-sm text-white/55">Reported to the Human. The policy file did not change.</span>
                                     </div>
                                 </div>
                             </div>
@@ -662,12 +591,6 @@ export default function Welcome() {
                                     </li>
                                 ))}
                             </ul>
-                            <p className="mt-9 max-w-2xl leading-relaxed text-white/70">
-                                Three modes, one floor. <span className="font-medium text-white">Plan</span> — read-only, the chief proposes and
-                                nothing executes. <span className="font-medium text-white">Default</span> — routine work moves, anything consequential
-                                still waits on you. <span className="font-medium text-white">Automated</span> — scheduled work runs on its own,
-                                inside the gates you set, never below the floor.
-                            </p>
                         </Reveal>
                     </div>
                 </section>
@@ -688,14 +611,9 @@ export default function Welcome() {
                     </div>
                     <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-40">
                         <Reveal>
-                            <p className="text-xs font-semibold tracking-[0.22em] text-[#f0b64c] uppercase">The class</p>
                             <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-tight text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] md:text-5xl">
                                 Taught free. The pack saves you the weekend.
                             </h2>
-                            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-                                The class teaches you the system, episode by episode, with screen-share walkthroughs of a sanitized system. The pack
-                                is the paid shortcut — the same system, ready to run.
-                            </p>
                         </Reveal>
                     </div>
                 </section>
@@ -705,17 +623,11 @@ export default function Welcome() {
                     <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:py-32">
                         <Reveal>
                             <h2 className="text-2xl font-semibold tracking-tight text-stone-900">Who it is for</h2>
-                            <p className="mt-4 max-w-md leading-relaxed text-stone-600">
-                                A company-of-one operator, 18–64, North American, already using an AI assistant and frustrated that it forgets,
-                                invents, or acts without a trail.
-                            </p>
+                            <p className="mt-4 max-w-md leading-relaxed text-stone-600">For the company of one whose assistant forgets.</p>
                         </Reveal>
                         <Reveal delay={120}>
                             <h2 className="text-2xl font-semibold tracking-tight text-stone-900">Who it is not for</h2>
-                            <p className="mt-4 max-w-md leading-relaxed text-stone-600">
-                                Anyone who wants a done-for-you service with no setup, or autonomous agents that spend, publish, or contact people
-                                without Human approval.
-                            </p>
+                            <p className="mt-4 max-w-md leading-relaxed text-stone-600">Not for hands-off service or unsupervised agents.</p>
                         </Reveal>
                     </div>
                 </section>
@@ -736,11 +648,6 @@ export default function Welcome() {
                                 </Reveal>
                             ))}
                         </ul>
-                        <Reveal>
-                            <p className="mt-10 max-w-2xl text-lg leading-relaxed text-stone-600">
-                                You bring your own AI — jewel OS is the manual for running it.
-                            </p>
-                        </Reveal>
                     </div>
                 </section>
 
@@ -749,9 +656,7 @@ export default function Welcome() {
                     <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
                         <Reveal>
                             <h2 className="text-3xl leading-tight font-semibold tracking-tight text-stone-900 md:text-4xl">Talk to a Human</h2>
-                            <p className="mt-4 max-w-2xl leading-relaxed text-stone-600">
-                                Questions about jewel OS, the pack, or the class? Send a message — a Human answers.
-                            </p>
+                            <p className="mt-4 max-w-2xl leading-relaxed text-stone-600">Questions? A Human answers.</p>
                         </Reveal>
                         <Reveal delay={120} className="mt-10">
                             <div className="rounded-3xl border border-stone-200/80 bg-white p-8 shadow-[0_25px_60px_-25px_rgba(28,25,23,0.3)] sm:p-10">
@@ -775,10 +680,6 @@ export default function Welcome() {
                             <div className="mt-10">
                                 <WaitlistForm id="waitlist-email-footer" compact dark />
                             </div>
-                            <blockquote className="mt-14 text-base font-medium text-white/60 italic">
-                                &ldquo;Machines propose, but Humans are the source of all decisions.&rdquo;
-                            </blockquote>
-                            <p className="mt-6 text-xs text-white/40">jewel OS — for the company of one.</p>
                         </Reveal>
                     </div>
                 </section>
